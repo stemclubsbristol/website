@@ -29,11 +29,52 @@
             padding: 0;
         }
 
-        header {
-            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+        /* Banner Header Styling */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
             border-bottom: 1px solid var(--border-color);
-            padding: 2rem 1rem;
+            background-color: var(--bg-color);
+        }
+
+        .banner-collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner-collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 17, 23, 0.7);
+        }
+
+        .banner-title {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            border: none !important;
+            margin: 0 !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
             text-align: center;
+            padding: 0 1rem;
         }
 
         .container {
@@ -107,9 +148,41 @@
             margin-top: 1rem;
         }
 
+        .service-card ul {
+            margin: 0.75rem 0 1rem 1.25rem;
+            color: var(--text-main);
+        }
+
+        .service-card li {
+            margin-bottom: 0.4rem;
+        }
+
         .service-card h3 {
             color: var(--accent);
             margin-bottom: 0.5rem;
+        }
+
+        .workshop-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin: 1rem 0;
+            display: block;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
         .tag {
@@ -152,13 +225,30 @@
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
         }
+
+        /* Mobile responsiveness adjustment for banner text */
+        @media (max-width: 600px) {
+            .banner-title {
+                font-size: 1.5rem;
+            }
+            .hero-banner {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="padding: 0;">
-            <h2 style="border: none; margin: 0; color: var(--accent); font-family: monospace; letter-spacing: 1px;">// STEM_CLUBS_BRISTOL</h2>
+    <!-- Banner Header with Image Collage and Overlay -->
+    <header class="hero-banner">
+        <div class="banner-collage">
+            <img src="images/mb1.webp" alt="" loading="lazy">
+            <img src="images/pico.webp" alt="" loading="lazy">
+            <img src="images/uno.webp" alt="" loading="lazy">
+            <img src="images/pi.webp" alt="" loading="lazy">
+        </div>
+        <div class="banner-overlay">
+            <h2 class="banner-title">// STEM_CLUBS_BRISTOL</h2>
         </div>
     </header>
 
@@ -166,35 +256,87 @@
         <!-- Hero Section -->
         <div class="hero">
             <h1>Hands-On Computing & STEM Workshops for <span>Schools</span></h1>
-            <p class="subtitle">Bringing hardware to life across Bristol. Book high-impact single sessions, half-day sessions, multi-week programs, after school and breakfast clubs or staff INSET designed to inspire students and empower teachers.</p>
+            <p class="subtitle">Bringing physical computing hardware to your school, we can cater for small groups in extra-curricular sessions, catch-up sessions, breakfast clubs, after school clubs and masterclasses. We'll bring our state of the art equipment and deliver interactive and engaging sessions that bring Computing to life!</p>
             <a href="#contact" class="btn">Enquire About School Bookings</a>
         </div>
 
         <!-- About Section -->
         <section>
             <h2>About STEM Clubs Bristol</h2>
-            <p>Led by an experienced secondary Computer Science educator and school leader with an extensive background in physical computing, STEM Clubs Bristol bridges the gap between abstract theory and real-world engineering.</p>
-            <p>We provide all the hardware and resources—allowing your students to move beyond the screen and get hands-on with micro:controllers, robotics, and physical code.</p>
+            <p>Led by an experienced secondary Computer Science educator and school leader with 30 years experience in schools and software houses across the South West, STEM Clubs Bristol bridges the gap between abstract theory and real-world engineering. As a member of the DBS update service, safeguarding is my primary concern and I will work in strict accordance with the protocols outlined in Keeping Children Safe in Education and your institutions safeguarding policy.</p>
+            <p>We provide all the extra hardware and resources and working with your schools ICT infrastructure, allow your students to move beyond the screen and get hands-on with micro-controllers, robotics, circuits, sensors and code.</p>
+            
+            <div class="image-grid">
+                <img src="images/mb1.webp" alt="BBC micro:bit setup 1" loading="lazy">
+                <img src="images/pi.webp" alt="BBC micro:bit setup 2" loading="lazy">
+            </div>
+
+            <div class="tag">Raspberry Pi, BBC Micro:bit, Arduino, Raspberry Pico</div>
         </section>
 
-        <!-- School Offerings & Formats -->
+        <!-- Courses & Workshops Section -->
         <section>
-            <h2>School Offerings & Formats</h2>
+            <h2>Our Courses & Workshops</h2>
+            <h4>All hardware in the descriptions are provided by us</h4>
             
             <div class="service-card">
-                <h3>Single & Half-Day Workshops</h3>
-                <p>Immersive, high-energy sessions (such as our popular <em>Up and Running with micro:bit V2</em> workshop) tailored to kickstart a curriculum unit, run as an enrichment day, or spark interest during STEM week.</p>
-                <div class="tag">Class Size: Strictly Capped at 15</div>
+                <h3>Up and Running with micro:bits (KS2 - KS4)</h3>
+                <img src="images/mb1.webp" alt="Up and Running with micro:bits" class="workshop-img" loading="lazy">
+                <p>This fun and interactive course will have a small group designing embedded systems and flashing microchips in no time! In other words, we’ll be using the micro:bit and MakeCode website to count steps, log the temperature, display fun reaction games and send coded messages.</p>
+                <div class="tag">Format: Either one session or a few. Contact to discuss.</div>
             </div>
 
             <div class="service-card">
-                <h3>Sequential Lesson Series</h3>
-                <p>A structured multi-week program delivered directly at your school, building core physical computing, debugging, and problem-solving skills progressively.</p>
+                <h3>Raceday with cars and micro:bits (KS2 - KS4) </h3>
+                <div class="image-grid">
+                    <img src="images/movemini.webp" alt="Buggy setup 1" loading="lazy">
+                    <img src="images/movemini2.webp" alt="Buggy setup 2" loading="lazy">
+                </div>
+                <p>This interactive session will see the students assemble frames, safely wire up servos and prep our robotic vehicles for raceday! Programming the trusty micro:bits, we’ll follow lines, avoid obstacles and transmit locations based upon the type of autonomous guided vehicle systems set up at key warehouses and factories across the globe. An exciting introduction to robotics, autonomous systems and sensors.</p>
+                <div class="tag">Format: Either one session or a few. Contact to discuss.</div>
             </div>
 
             <div class="service-card">
-                <h3>Bespoke Sessions</h3>
-                <p>Fully customizable workshops designed to match your specific key stage requirements, project goals, or cross-curricular themes.</p>
+                <h3>Introducing Electronics with the BBC micro:bit (KS2 - KS5)</h3>
+                <img src="images/mb3.webp" alt="Raspberry Pico hardware" class="workshop-img" loading="lazy">
+                <p>Get hands on with breadboards, jumper wires, sensors, buzzers, buttons, switches, LEDs, and display screens as we build and program circuits using the micro:bit, breakout boards and Python programming language, creating wonderful prototypes of traffic lights, burglar alarms, weather stations, and automatic plant and pet feeders.</p>
+                <div class="tag">Format: Either one session or a few. Contact to discuss.</div>
+            </div>
+
+            <div class="service-card">
+                <h3>Introducing Electronics with the Raspberry Pico & Python (KS2 - KS5)</h3>
+                <img src="images/pico.webp" alt="Raspberry Pico hardware" class="workshop-img" loading="lazy">
+                <p>Get hands on with breadboards, jumper wires, sensors, buzzers, buttons, switches, LEDs, and display screens as we build and program circuits using the Raspberry Pi Pico and Python programming language, creating wonderful prototypes of traffic lights, burglar alarms, weather stations, and automatic plant and pet feeders.</p>
+                <div class="tag">Format: Either one session or a few. Contact to discuss.</div>
+            </div>
+
+            <div class="service-card">
+                <h3>Introducing Electronics with the Arduino Uno R3 & C++ (KS2 - KS5)</h3>
+                <img src="images/uno.webp" alt="Arduino Uno R3 hardware setup" class="workshop-img" loading="lazy">
+                <p>Just like Introducing Electronics with the Raspberry Pi Pico, we get hands on with breadboards, jumper wires, sensors, buzzers, buttons, switches, LEDs, and display screens to build and program circuits using the Arduino Uno R3 and C++ programming language. We will create exciting prototypes of traffic lights, burglar alarms, weather stations, and automatic plant and pet feeders. This course is excellent for teaching adaptability if students are mostly familiar with Python.</p>
+                <div class="tag">Format: Either one session or a few. Contact to discuss. </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Networking with Raspberry Pi (KS4 - KS5)</h3>
+                <img src="images/pi.webp" alt="Raspberry Pi Networking hardware" class="workshop-img" loading="lazy">
+                <p>For the hardware and CLI enthusiasts, this course offers a deep dive into building networks using an unmanaged switch, Ethernet cabling, and a fleet of Raspberry Pi computers. We’ll use the command line and SSH to create nodes on our network covering key protocols, software deployment, management, and key security basics. This is a very hands-on course that builds a simple closed network completely isolated from your school network.</p>
+                <div class="tag">Format: A half day session. Contact to discuss.</div>
+            </div>
+
+            <div class="service-card">
+                <h3>Bespoke Computer Science / STEM Sessions</h3>
+                <img src="images/pico2.webp" alt="Raspberry Pico advanced hardware" class="workshop-img" loading="lazy">
+                <p>We can work with your Computer Science Department to support students with:</p>
+                <ul>
+                    <li>learning to code in a range of languages (Python, VB, C#, C++, Javascript, etc)</li>
+                    <li>tutoring Computer Science GCSE/A-Level topics</li>
+                    <li>interventions to support missed topics requiring re-teach</li>
+                    <li>exam practice and preparation</li>
+                    <li>AI and vibe coding</li>
+                    <li>any other CS/STEM initiative you'd like to implement</li>
+                </ul>
+                <div class="tag">Contact to discuss</div>
             </div>
         </section>
 
@@ -207,18 +349,21 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Get in Touch</h2>
-            <p>Ready to discuss availability, pricing, or curriculum fit for your school? Drop us a message below or email us directly at <strong>stemclubsbristol@gmail.com</strong>.</p>
+            <p>To discuss availability, pricing, or curriculum fit for your school, drop us a message below or email us directly at <strong>stemclubsbristol@gmail.com</strong>.</p>
             
             <form class="contact-form" action="mailto:stemclubsbristol@gmail.com" method="POST" enctype="text/plain">
                 <input type="text" name="school_name" placeholder="School Name" required>
                 <input type="text" name="contact_name" placeholder="Contact Name & Role (e.g. Head of Computing)" required>
                 <input type="email" name="email" placeholder="School Email Address" required>
                 <select name="service_requested" required style="background-color: var(--bg-color); color: var(--text-heading);">
-                    <option value="" disabled selected>Select Service Required</option>
-                    <option value="Half-Day Workshop">Single / Half-Day Workshop</option>
-                    <option value="Sequential Lesson Series">Sequential Lesson Series</option>
-                    <option value="Bespoke Session">Bespoke Session</option>
+                    <option value="" disabled selected>Select Course / Service Required</option>
+                    <option value="micro:bits Course">Up and Running with micro:bits</option>
+                    <option value="Raceday Micro:Maqueen">Raceday with Micro:Maqueen & micro:bits</option>
+                    <option value="Raspberry Pi Pico Electronics">Introducing Electronics with Raspberry Pi Pico</option>
+                    <option value="Arduino Uno R3 Electronics">Introducing Electronics with Arduino Uno R3</option>
+                    <option value="Networking with Raspberry Pi">Networking with Raspberry Pi</option>
                     <option value="CS INSET / Staff Training">Computer Science INSET / Staff Training</option>
+                    <option value="Bespoke Session">Bespoke Session</option>
                 </select>
                 <textarea name="message" rows="4" placeholder="Brief details about your classes, year groups, or preferred dates" required></textarea>
                 <button type="submit" class="btn" style="cursor: pointer; border: none;">Send School Enquiry</button>
