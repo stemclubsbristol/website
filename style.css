@@ -288,3 +288,36 @@ footer {
         height: 160px;
     }
 }
+
+@media (max-width: 600px) {
+    .banner-title {
+        font-size: 1.5rem;
+    }
+    .hero-banner {
+        height: 160px;
+    }
+    
+    /* Give the site breathing room on mobile */
+    .container {
+        padding: 1rem 0.75rem;
+    }
+
+    section {
+        padding: 1.25rem 1rem; /* Reduces heavy inner frame padding */
+    }
+
+    h1 {
+        font-size: 2rem; /* Prevents main title from wrapping awkwardly */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Stacks image grids vertically on phones */
+    }
+
+    .site-nav {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}
