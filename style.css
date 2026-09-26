@@ -279,22 +279,13 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
 }
-
 @media (max-width: 600px) {
     .banner-title {
-        font-size: 1.5rem;
+        font-size: 1.1rem; /* Scaled down to prevent unwanted two-line wrapping */
+        letter-spacing: 1px;
     }
     .hero-banner {
-        height: 160px;
-    }
-}
-
-@media (max-width: 600px) {
-    .banner-title {
-        font-size: 1.5rem;
-    }
-    .hero-banner {
-        height: 160px;
+        height: 140px; /* Slightly reduced height to match the tighter text */
     }
     
     /* Give the site breathing room on mobile */
@@ -303,15 +294,15 @@ footer {
     }
 
     section {
-        padding: 1.25rem 1rem; /* Reduces heavy inner frame padding */
+        padding: 1.25rem 1rem;
     }
 
     h1 {
-        font-size: 2rem; /* Prevents main title from wrapping awkwardly */
+        font-size: 2rem;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* Stacks image grids vertically on phones */
+        grid-template-columns: 1fr;
     }
 
     .site-nav {
